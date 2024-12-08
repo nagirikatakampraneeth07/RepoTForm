@@ -7,14 +7,9 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/nagirikatakampraneeth07/RepoTForm.git'
             }
         }
-        stage('init') {
+        stage('run') {
             steps {
-                sh 'terraform init'
-            }
-        }
-                stage('apply') {
-            steps {
-                sh 'terraform apply -auto-approve'
+                sh 'python3 app.py'
             }
         }
     }
